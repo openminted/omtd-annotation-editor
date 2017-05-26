@@ -17,10 +17,12 @@
  */
 package eu.openminted.annotationeditor.app;
 
+import org.apache.wicket.Page;
 import org.springframework.stereotype.Component;
 
 import de.tudarmstadt.ukp.clarin.webanno.ui.core.WicketApplicationBase;
 import de.tudarmstadt.ukp.clarin.webanno.ui.core.page.WebAnnoCssReference;
+import de.tudarmstadt.ukp.clarin.webanno.ui.menu.MainMenuPage;
 import eu.openminted.annotationeditor.app.css.OpenMinTeDCssReference;
 
 @Component("wicketApplication")
@@ -39,5 +41,11 @@ public class WicketApplication
     protected String getLogoLocation()
     {
         return "/eu/openminted/annotationeditor/app/logo/OpenMINTED_Black_small.png";
+    }
+
+    @Override
+    public Class<? extends Page> getHomePage()
+    {
+        return MainMenuPage.class;
     }
 }
